@@ -99,7 +99,6 @@ def rename_and_sort_files(source_dir):
         # Generate new name
         random_part = get_random_name(max_len=7)
         
-        # --- CORRECTED LOGIC HERE ---
         # Explicitly adds a dot "." before the original extension
         new_filename = f"{random_part}.{clean_orig_ext}"
         # -----------------------------
@@ -112,9 +111,9 @@ def rename_and_sort_files(source_dir):
             shutil.move(file_path, destination_path)
             moved_count += 1
         except PermissionError:
-            print(f"❌ Permission failed for: {filename}")
+            print(f" Permission failed for: {filename}")
         except Exception as e:
-            print(f"❌ Unexpected error with {filename}: {e}")
+            print(f" Unexpected error with {filename}: {e}")
 
     print(f"\n Process completed! {moved_count} files have been moved.")
 
@@ -136,3 +135,4 @@ if __name__ == "__main__":
         
 
     rename_and_sort_files(directory_to_process)
+
