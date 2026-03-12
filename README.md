@@ -2,7 +2,7 @@
 
 A robust Python utility designed to automatically sort all files within a specific directory into subfolders based on their file extension. The tool ensures data integrity by generating unique random names for every file before moving it.
 
-## ⚡ Features
+##  Features
 
 - **Smart Sorting**: Automatically detects file extensions and creates corresponding subdirectories (e.g., `.txt`, `.jpg`, `.pdf`).
 - **Secure Renaming**: Generates cryptographically safe-looking random alphanumeric strings (length 1–7) to prevent naming conflicts.
@@ -10,7 +10,7 @@ A robust Python utility designed to automatically sort all files within a specif
 - **Extension Preservation**: Ensures the final filename always follows the strict format `RandomString.extension`.
 - **Error Handling**: Gracefully handles permission errors, missing paths, and symbolic links without crashing.
 
-## 🛠️ Prerequisites
+##  Prerequisites
 
 No external libraries are required. This script relies solely on Python's standard library modules:
 - `os`
@@ -21,7 +21,7 @@ No external libraries are required. This script relies solely on Python's standa
 
 **Python Version:** Compatible with Python 3.x
 
-## 📥 Installation
+##  Installation
 
 1. Clone or download the script (e.g., `file_organizer.py`) to your machine.
 2. Open a terminal or command prompt.
@@ -33,7 +33,7 @@ python file_organizer.py
 
 > **Note**: Ensure you have write permissions for the directory you intend to organize.
 
-## 🚀 Usage
+##  Usage
 
 ### Step-by-Step Execution
 
@@ -69,7 +69,7 @@ If your input directory contains `report.pdf`, `image.jpg`, and `data.csv`, the 
    📄 pQ7r8.csv
 ```
 
-## 🔒 Safety & Security Measures
+##  Safety & Security Measures
 
 This script includes multiple layers of protection to prevent accidental data loss or system corruption:
 
@@ -78,13 +78,13 @@ This script includes multiple layers of protection to prevent accidental data lo
 - **Path Validation**: Verifies that the provided path exists and is actually a directory before attempting any operations.
 - **Atomic Operations**: Uses standard OS file moving functions (`shutil.move`) which handle cross-folder transfers safely within the same drive.
 
-## ⚠️ Warnings
+##  Warnings
 
 - **Irreversible Changes**: Once executed, the script moves files permanently. There is no undo function within the script itself. **Always backup important data** before running bulk file operations.
 - **No Preview**: The current version processes files immediately upon confirmation. No preview mode is available yet.
 - **Drive Constraints**: Files can only be moved between subdirectories on the same drive/partition as the source. Cross-drive moves require manual intervention.
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 | Issue | Possible Cause | Solution |
 |-------|----------------|----------|
@@ -93,10 +93,11 @@ This script includes multiple layers of protection to prevent accidental data lo
 | Files not sorted correctly | Mixed extension formats | The script handles both `file.ext` and `.ext` inputs uniformly. |
 | Recursion Loop Detected | Script included its own logic incorrectly | Check the "Self-Protection" section; ensure filenames don't contain common triggers like `sorter`. |
 
-## 📄 License
+##  License
 
 This project is open-source and free to use for personal and commercial purposes.
 
 ---
 
 *Developed for efficient digital organization.*
+
