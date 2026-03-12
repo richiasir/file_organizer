@@ -27,7 +27,7 @@ def rename_and_sort_files(source_dir):
     # Safety check: Is this script running inside its own target directory?
     script_filename = os.path.basename(sys.argv[0])
     if os.path.abspath(source_dir) == os.path.dirname(os.path.abspath(script_filename)):
-        print("⚠️  CRITICAL WARNING: Script detected it is executing within the destination directory.")
+        print(" CRITICAL WARNING: Script detected it is executing within the destination directory.")
         confirm = input("Are you sure you want to continue? This could delete or corrupt the script itself. (y/n): ")
         if confirm.lower() != 'y':
             print("Operation cancelled for safety reasons.")
@@ -52,7 +52,7 @@ def rename_and_sort_files(source_dir):
         print("No files with valid extensions found to process.")
         return
 
-    print(f"✅ Found {len(extensions)} unique extensions.\n")
+    print(f" Found {len(extensions)} unique extensions.\n")
 
     # Create subfolders
     print("Creating folder structure...")
@@ -64,10 +64,10 @@ def rename_and_sort_files(source_dir):
                 os.makedirs(target_folder)
                 print(f"   - Created: {folder_name}")
             except OSError as e:
-                print(f"   ⚠️  Error creating {folder_name}: {e}")
+                print(f"   Error creating {folder_name}: {e}")
 
     # Step 2: Move and rename files
-    print("\n🔄 Processing and moving files...\n")
+    print("\n Processing and moving files...\n")
     
     moved_count = 0
     
@@ -89,11 +89,11 @@ def rename_and_sort_files(source_dir):
         )
         
         if is_script_target:
-            print(f"🛡️  Protecting/Skipping system/cripto file: {filename}")
+            print(f"  Protecting/Skipping system/cripto file: {filename}")
             continue
             
         if not clean_orig_ext:
-            print(f"⏭️  Skipping file without extension: {filename}")
+            print(f"  Skipping file without extension: {filename}")
             continue
         
         # Generate new name
@@ -116,22 +116,23 @@ def rename_and_sort_files(source_dir):
         except Exception as e:
             print(f"❌ Unexpected error with {filename}: {e}")
 
-    print(f"\n✨ Process completed! {moved_count} files have been moved.")
+    print(f"\n Process completed! {moved_count} files have been moved.")
 
 if __name__ == "__main__":
     print("="*60)
-    print(" 📁 ADVANCED FILE ORGANIZER")
+    print("  ADVANCED FILE ORGANIZER")
     print("="*60)
     
     directory_to_process = input("\nEnter the full path of the directory to organize: ").strip()
     
     if not os.path.isdir(directory_to_process):
-        print(f"❌ ERROR: Path '{directory_to_process}' is invalid or does not exist.")
+        print(f" ERROR: Path '{directory_to_process}' is invalid or does not exist.")
         sys.exit(1)
         
-    confirm = input("\n⚠️  WARNING: This operation moves and renames files permanently.\nContinue? (y/n): ")
+    confirm = input("\n  WARNING: This operation moves and renames files permanently.\nContinue? (y/n): ")
     if confirm.lower() != 'y':
         print("Cancelled.")
         sys.exit(0)
         
+
     rename_and_sort_files(directory_to_process)
