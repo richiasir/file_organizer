@@ -1,4 +1,4 @@
-# Advanced File Organizer & Sorter
+# File Organizer & Sorter
 
 A robust Python utility designed to automatically sort all files within a specific directory into subfolders based on their file extension. The tool ensures data integrity by generating unique random names for every file before moving it.
 
@@ -100,4 +100,5 @@ This project is open-source and free to use for personal and commercial purposes
 ---
 
 *Developed for efficient digital organization.*
+
 
